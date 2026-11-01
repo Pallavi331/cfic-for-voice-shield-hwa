@@ -1,0 +1,7 @@
+services:
+  cfic-api:
+    build: .
+    ports: ["8000:8000"]
+    env_file: .env
+    environment:
+      CFIC_ENV: development

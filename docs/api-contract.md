@@ -1,0 +1,1 @@
+PellaV2: status, artifact-native prediction, native score if available, model_version, error category. Confirm score polarity/class mapping first. Transcription: status, text, optional language, model_version, error category. RIAS: strict LOW/MEDIUM/HIGH; criteria and prompt TBD. Final response: request ID, outcome, reason code, component statuses, model version and latency.\n
