@@ -1,1 +1,59 @@
-.venv/\n__pycache__/\n*.py[cod]\n.pytest_cache/\n.env\nmodels/\nartifacts/\naudio_samples/\n
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Environment files and secrets (NEVER commit secrets!)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+id_rsa*
+
+# Model weights and artifacts (do not commit binary models)
+models/
+artifacts/
+weights/
+*.pt
+*.pth
+*.onnx
+*.bin
+*.safetensors
+*.gguf
+*.tflite
+*.joblib
+
+# Audio files and datasets
+audio_samples/
+datasets/
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.m4a
+*.aac
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo

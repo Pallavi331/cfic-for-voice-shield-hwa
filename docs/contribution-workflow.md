@@ -1,19 +1,13 @@
-# Contribution workflow
-Each member works on a dedicated branch and opens a PR into `main`.
+# Contribution Workflow
 
-- `contrib/project-lead-cfic`: CFIC API, auth/rate limiting, orchestration, hosted LLM, TCED and end-to-end tests.
-- `contrib/varun-pellav2-quantization`: exact PellaV2 artifact, quantization, comparison report and artifact manifest.
-- `contrib/varshu-pellav2-docker`: detector Docker service, health/inference endpoints, tests and run docs.
-- `contrib/pallavi-transcription-docker`: benchmark Whisper vs AI4Bharat IndicConformer, then selected transcription container and tests.
+See the authoritative contribution workflow and PR criteria in [CONTRIBUTING.md](file:///C:/MyProjects/CFIC-VoiceShield-HackVersion/docs/CONTRIBUTING.md).
 
-PR checklist: tests pass; no secrets/private audio; artifact version and license documented; API/error contract documented; note any changed TBD; preserve `RIAS HIGH → SUSPICIOUS`.
-
-After creating an empty remote:
-```bash
-git remote add origin <REMOTE_URL>
-git push -u origin main
-git push origin contrib/project-lead-cfic
-git push origin contrib/varun-pellav2-quantization
-git push origin contrib/varshu-pellav2-docker
-git push origin contrib/pallavi-transcription-docker
-```
+### Quick Summary
+1. Sainadh (Project Lead) initializes the baseline on `main`.
+2. Team members (Varun, Varshu, Pallavi) clone the repo and create feature branches:
+   - `feature/varun-pellav2-model-preparation`
+   - `feature/varshu-pellav2-docker-service`
+   - `feature/pallavi-transcription-service`
+3. Members work independently in their isolated service directories.
+4. Members commit and push from their own personal GitHub accounts and open PRs to `main`.
+5. Sainadh reviews, verifies contracts and TCED safety, and merges.

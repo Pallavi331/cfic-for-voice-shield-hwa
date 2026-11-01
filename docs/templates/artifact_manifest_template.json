@@ -1,0 +1,33 @@
+{
+  "artifact_name": "PellaV2",
+  "artifact_version": "FILL_ME (e.g. pellav2-v1.0.0-int8)",
+  "framework": "FILL_ME (e.g. onnx / pytorch / huggingface)",
+  "source_revision": "FILL_ME (git commit SHA or HF commit hash)",
+  "checksum_sha256": "FILL_ME_SHA256_HASH",
+  "backbone": {
+    "includes_xlsr": true,
+    "backbone_name": "wav2vec2-xls-r-300m"
+  },
+  "audio_input_contract": {
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "audio_format": "PCM 16-bit WAV",
+    "min_duration_seconds": 1.0,
+    "max_duration_seconds": 30.0
+  },
+  "output_semantics": {
+    "classes": ["GENUINE", "FAKE"],
+    "score_range": [0.0, 1.0],
+    "score_polarity": "FILL_ME: 1.0 = FAKE / SYNTHETIC, 0.0 = GENUINE",
+    "recommended_threshold": 0.50
+  },
+  "quantization": {
+    "method": "FILL_ME (e.g. INT8 Dynamic Quantization / FP16)",
+    "toolchain": "ONNX Runtime 1.17 / PyTorch 2.2",
+    "unquantized_size_mb": 0.0,
+    "quantized_size_mb": 0.0,
+    "size_reduction_pct": 0.0
+  },
+  "verified_by": "Varun",
+  "date_verified": "YYYY-MM-DD"
+}

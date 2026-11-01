@@ -1,1 +1,15 @@
-Branches included:\nmain\ncontrib/project-lead-cfic\ncontrib/varun-pellav2-quantization\ncontrib/varshu-pellav2-docker\ncontrib/pallavi-transcription-docker\n
+CFIC × VoiceShield HackVersion — Repository Branch Reference
+
+Primary Repository Branches:
+- main                                  Baseline production branch managed by Sainadh (Project Lead)
+
+Suggested Contributor Feature Branches for Pull Requests:
+- feature/varun-pellav2-model-preparation     Varun (MLOps Architect)
+- feature/varshu-pellav2-docker-service       Varshu (Cloud Engineer)
+- feature/pallavi-transcription-service       Pallavi (Cloud Engineer)
+
+Legacy/Local Scratch Branches:
+- contrib/project-lead-cfic
+- contrib/varun-pellav2-quantization
+- contrib/varshu-pellav2-docker
+- contrib/pallavi-transcription-docker

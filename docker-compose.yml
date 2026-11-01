@@ -1,7 +1,49 @@
 services:
   cfic-api:
-    build: .
-    ports: ["8000:8000"]
-    env_file: .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cfic-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
     environment:
-      CFIC_ENV: development
+      - CFIC_ENV=development
+      - CFIC_PELLA_BASE_URL=http://pella-service:8101
+      - CFIC_TRANSCRIPTION_BASE_URL=http://transcription-service:8102
+    depends_on:
+      - pella-service
+      - transcription-service
+    networks:
+      - cfic-network
+
+  pella-service:
+    build:
+      context: .
+      dockerfile: services/pella/Dockerfile
+    container_name: cfic-pella-service
+    ports:
+      - "8101:8101"
+    environment:
+      - PELLA_USE_MOCK=true
+      - PELLA_MODEL_VERSION=pellav2-scaffold-v0.1
+    networks:
+      - cfic-network
+
+  transcription-service:
+    build:
+      context: .
+      dockerfile: services/transcription/Dockerfile
+    container_name: cfic-transcription-service
+    ports:
+      - "8102:8102"
+    environment:
+      - TRANSCRIPTION_USE_MOCK=true
+      - TRANSCRIPTION_MODEL_VERSION=whisper-indic-mock-v0.1
+    networks:
+      - cfic-network
+
+networks:
+  cfic-network:
+    driver: bridge

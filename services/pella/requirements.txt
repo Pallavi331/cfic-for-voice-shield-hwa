@@ -1,0 +1,8 @@
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+pydantic>=2.8,<3.0
+python-multipart>=0.0.9
+# PyTorch / ONNX Runtime to be pinned by Varun & Varshu once artifact is confirmed:
+# torch>=2.2.0 --extra-index-url https://download.pytorch.org/whl/cpu
+# onnxruntime>=1.17.0
+# soundfile>=0.12.1
